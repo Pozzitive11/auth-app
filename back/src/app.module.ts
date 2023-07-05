@@ -20,13 +20,21 @@ import { join } from "path";
     }),
     SequelizeModule.forRoot({
       dialect: "postgres",
-      host: process.env.POSTGRES_HOST,
-      port: Number(process.env.POSTGRES_PORT),
-      username: process.env.POSTGRES_USER,
-      password: process.env.POSTGRES_PASSWORD,
-      database: process.env.POSTGRES_DB,
+      host:
+        "ec2-63-35-80-199.eu-west-1.compute.amazonaws.com",
+      port: 5432,
+      username: "njhjwmkqibepyx",
+      password:
+        "5d65d3c915730a2f69777fef2bbd47b63ef2f327060a193d9a32d0e1c600a9d6",
+      database: "d8b9kbo6uv2o5e",
       models: [User, Token],
       autoLoadModels: true,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      },
     }),
     UsersModule,
     AuthModule,

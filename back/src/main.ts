@@ -1,12 +1,15 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import * as cookieParser from "cookie-parser";
+import { NestExpressApplication } from "@nestjs/platform-express";
 
 async function start() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(
+    AppModule
+  );
   app.enableCors({
     credentials: true,
-    origin: process.env.CLIENT_URLS.split(", "),
+    origin: process.env.CLIENT_URLS,
   });
   app.use(cookieParser());
   app.setGlobalPrefix("api");
