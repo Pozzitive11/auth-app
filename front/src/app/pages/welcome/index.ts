@@ -1,0 +1,1 @@
+export { WelcomePageComponent } from './ui';
