@@ -1,1 +1,0 @@
-export { WelcomePageComponent } from './ui';

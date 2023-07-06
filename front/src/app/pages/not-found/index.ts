@@ -1,1 +1,0 @@
-export { NotFoundPageComponent } from './ui';

@@ -1,1 +1,0 @@
-export { LoginPageComponent } from './ui';
