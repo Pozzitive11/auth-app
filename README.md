@@ -1,1 +1,2 @@
-Save cookies to httpOnly
+## Save cookies to httpOnly
+## Use PostgreSQL
