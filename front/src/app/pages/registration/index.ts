@@ -1,0 +1,1 @@
+export { RegistrationPageComponent } from './ui';

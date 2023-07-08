@@ -1,0 +1,42 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+  <mat-form-field>
+    <input matInput placeholder="Email" [formControl]="emailControl" />
+    <mat-error
+      *ngIf="
+        emailControl.hasError('required') || emailControl.hasError('email')
+      "
+    >
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailControl.hasError('isIncorrect')"
+      >User with email does not exist</mat-error
+    >
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="password"
+      placeholder="Password"
+      [formControl]="passwordControl"
+    />
+    <mat-error
+      *ngIf="
+        passwordControl.hasError('minlength') ||
+        passwordControl.hasError('required')
+      "
+    >
+      Please enter a valid password
+    </mat-error>
+    <mat-error *ngIf="passwordControl.hasError('isIncorrect')"
+      >Incorrect password</mat-error
+    >
+  </mat-form-field>
+  <button
+    mat-raised-button
+    [disabled]="loginForm.invalid"
+    color="primary"
+    type="submit"
+  >
+    Sign In
+  </button>
+</form>
