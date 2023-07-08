@@ -7,10 +7,10 @@ import { Observable, catchError, map, mergeMap, of, tap } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { UserDto } from '@shared/api';
 import { AuthService } from '../services';
-import { UserService } from '@modules/user/services';
 import { AuthActions } from '.';
 import { AuthRes } from '../models';
 import { environment } from '@environments/environment.development';
+import { UserService } from '@modules/user';
 
 @Injectable()
 export class AuthEffects {
